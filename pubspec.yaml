@@ -1,10 +1,10 @@
 name: libusb
 description: Dart wrapper via `dart:ffi` for https://github.com/libusb/libusb
-version: 0.4.23-dev.1+1
+version: 0.3.23+2
 homepage: https://github.com/woodemi/libusb.dart
 
 environment:
-  sdk: '>=2.16.0-124.0.dev <3.0.0'
+  sdk: '>=2.13.0 <3.0.0'
 
 platforms:
   linux:
@@ -23,22 +23,9 @@ dev_dependencies:
 ffigen:
   name: Libusb
   description: Bindings to `libusb.h`.
-  output: 'lib/src/libusb.ffigen.dart'
+  output: 'lib/libusb.dart'
   headers:
     entry-points:
       - 'libusb-1.0/libusb.h'
     include-directives: # include only these header files and necessary structs from other header files
       - '**libusb.h'
-  library-imports:
-    pkg_libusb: 'package:libusb/src/libusb_base.dart'
-  type-map:
-    'typedefs':
-      'ssize_t':
-        'lib': 'pkg_libusb'
-        'c-type': 'Ssize'
-        'dart-type': 'int'
-    'structs':
-      'timeval':
-        'lib': 'pkg_libusb'
-        'c-type': 'Timeval'
-        'dart-type': 'Timeval'

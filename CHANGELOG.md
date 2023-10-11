@@ -1,12 +1,3 @@
-## 0.4.23-dev.1+1
-
-- Move example/listdevs.dart to example/main.dart
-
-## 0.4.23-dev.0
-
-- Refactor with ffigen 5.0.0+
-- Support ABI-specific `ssize_t` and `timeval`
-
 ## 0.3.23+2
 
 - Update generated code with ffigen 3.0.0
